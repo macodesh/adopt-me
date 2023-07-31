@@ -16,7 +16,7 @@ export function Pet({
   return (
     <Link
       to={`/details/${id}`}
-      className="pet"
+      className="relative block"
     >
       <div className="image-container">
         <img
@@ -24,7 +24,7 @@ export function Pet({
           alt={name}
         />
       </div>
-      <div className="info">
+      <div className="bg-gradient-tr absolute bottom-0 left-0 from-white to-transparent pr-2 pt-2">
         <h1>{name}</h1>
         <h2>
           {animal} - {breed} - {location}

@@ -3,7 +3,7 @@ import { Pet } from './Pet'
 
 export function Results({ pets }: IPetFromApi): JSX.Element {
   return (
-    <div className="search">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {!pets.length ? (
         <h1>No pets found.</h1>
       ) : (

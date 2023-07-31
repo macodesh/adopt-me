@@ -10,6 +10,7 @@ export function Form({
 }: IFormProps): JSX.Element {
   return (
     <form
+      className="mb-10 flex flex-col items-center justify-center rounded-lg bg-gray-200 p-10 shadow-lg"
       onSubmit={(e) => {
         e.preventDefault()
 
@@ -38,6 +39,7 @@ export function Form({
           id="location"
           placeholder="Seattle, WA"
           name="location"
+          className="mb-5 block w-60"
         />
       </label>
       <label htmlFor="animal">
@@ -46,6 +48,7 @@ export function Form({
           id="animal"
           value={animal}
           onChange={(e) => setAnimal(e.target.value)}
+          className="mb-5 block w-60"
         >
           <option value=""></option>
           {ANIMALS.map((s) => (
@@ -64,6 +67,7 @@ export function Form({
           id="breed"
           name="breed"
           disabled={breeds.length === 0}
+          className="mb-5 block w-60 disabled:opacity-50"
         >
           <option value=""></option>
           {breeds.map((b) => (
@@ -76,7 +80,12 @@ export function Form({
           ))}
         </select>
       </label>
-      <button type="submit">Submit</button>
+      <button
+        type="submit"
+        className="color rounded border-none bg-orange-500 px-6 py-2 text-white transition hover:opacity-50"
+      >
+        Submit
+      </button>
     </form>
   )
 }

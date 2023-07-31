@@ -5,8 +5,8 @@ import { IAdoptedPetContext, IPet } from '../utils/interfaces'
 import { Carousel } from '../components/Carousel'
 import { ErrorBoundary } from '../components/ErrorBoundary'
 import { useState, useContext } from 'react'
-import { Modal } from '../components/Modal'
 import { adoptedPetContext } from '../context'
+import { Modal } from '../components/Modal'
 
 function Details(): JSX.Element {
   const [showModal, setShowModal] = useState(false)
@@ -58,7 +58,7 @@ function Details(): JSX.Element {
   )
 }
 
-export function DetailsErrorBoundary(): JSX.Element {
+export default function DetailsErrorBoundary(): JSX.Element {
   return (
     <ErrorBoundary>
       <Details />

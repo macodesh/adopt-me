@@ -7,7 +7,7 @@ import { fetchSearch } from '../utils/queries'
 import { adoptedPetContext } from '../context'
 import { IAdoptedPetContext } from '../utils/interfaces'
 
-export function SearchParams(): JSX.Element {
+export default function SearchParams(): JSX.Element {
   const [reqParams, setReqParams] = useState({
     location: '',
     animal: '',
@@ -20,7 +20,7 @@ export function SearchParams(): JSX.Element {
   const pets = results.data?.pets ?? []
 
   return (
-    <div className="search-params">
+    <div className="mx-auto my-0 w-11/12">
       <Form
         animal={animal}
         setAnimal={setAnimal}

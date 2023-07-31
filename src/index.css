@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
   color: #333;
@@ -18,9 +22,7 @@ body {
 .search-params form {
   border-radius: 6px;
   background: #faeff0;
-  box-shadow:
-    0px 0px 12px #aaa,
-    -0px -0px 12px #fff;
+  box-shadow: 0px 0px 12px #aaa, -0px -0px 12px #fff;
   width: 360px;
   margin: 0px 25px 0px 0px;
   padding: 35px 15px 15px 15px;
@@ -30,9 +32,7 @@ body {
 .search {
   border-radius: 6px;
   background: #faeff0;
-  box-shadow:
-    0px 0px 12px #aaa,
-    -0px -0px 12px #fff;
+  box-shadow: 0px 0px 12px #aaa, -0px -0px 12px #fff;
   width: 715px;
   padding: 15px;
   float: left;
@@ -46,9 +46,7 @@ body {
   margin-bottom: 25px;
   border-radius: 6px;
   background: #faeff0;
-  box-shadow:
-    0px 0px 12px #aaa,
-    -0px -0px 12px #fff;
+  box-shadow: 0px 0px 12px #aaa, -0px -0px 12px #fff;
 }
 
 .pet {
