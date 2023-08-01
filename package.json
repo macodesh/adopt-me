@@ -9,7 +9,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "format": "prettier --write --cache --cache-strategy metadata \"src/**/*.{ts,tsx}\"",
-    "format:lint": "pnpm run format && pnpm run lint"
+    "format:lint": "pnpm run format && pnpm run lint",
+    "format:check": "prettier --check --cache --cache-strategy metadata \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
     "@tanstack/react-query": "^4.32.0",
