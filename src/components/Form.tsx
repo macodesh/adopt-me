@@ -1,7 +1,7 @@
 import { ANIMALS } from '../utils/constants'
 import { IFormProps, IReqParams } from '../utils/interfaces'
 
-export default function Form({
+export function Form({
   animal,
   setAnimal,
   breeds,
@@ -10,7 +10,6 @@ export default function Form({
 }: IFormProps): JSX.Element {
   return (
     <form
-      className="mb-10 flex flex-col items-center justify-center rounded-lg bg-gray-200 p-10 shadow-lg"
       onSubmit={(e) => {
         e.preventDefault()
 

@@ -1,6 +1,6 @@
 import { Component, MouseEvent } from 'react'
 
-export default class Carousel extends Component<{ images: string[] }> {
+export class Carousel extends Component<{ images: string[] }> {
   state = {
     active: 0
   }

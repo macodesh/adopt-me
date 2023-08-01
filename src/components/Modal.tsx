@@ -1,7 +1,7 @@
 import { PropsWithChildren, ReactPortal, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 
-export default function Modal({ children }: PropsWithChildren): ReactPortal {
+export function Modal({ children }: PropsWithChildren): ReactPortal {
   const ref = useRef<HTMLDivElement | null>(null)
 
   if (!ref.current) {

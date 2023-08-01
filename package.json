@@ -4,15 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "pnpm build && pnpm start",
-    "build:client": "tsc && vite build --outDir ../dist/client",
-    "build:server": "tsc && vite build --outDir ../dist/server --ssr server",
-    "build": "pnpm run build:client && pnpm run build:server",
+    "dev": "vite",
+    "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "format": "prettier --write --cache --cache-strategy metadata \"./src/**/*.{ts,tsx}\"",
-    "format:lint": "pnpm run format && pnpm run lint",
-    "start": "node dist/server/index.js"
+    "format": "prettier --write --cache --cache-strategy metadata \"src/**/*.{ts,tsx}\"",
+    "format:lint": "pnpm run format && pnpm run lint"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.32.0",
@@ -32,8 +29,6 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.9.0",
-    "eslint-import-resolver-typescript": "^3.5.5",
-    "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
