@@ -1,35 +1,49 @@
-import { Routes, Route, Link } from 'react-router-dom'
-import { lazy } from 'react'
+import { Link, Route, Routes } from 'react-router-dom'
+import './index.css'
+import { lazy, Suspense } from 'react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import AdoptedPetProvider from './context/AdoptedPetProvider'
 
 const Details = lazy(() => import('./pages/Details'))
 const SearchParams = lazy(() => import('./pages/SearchParams'))
 
-export function App(): JSX.Element {
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+      cacheTime: Infinity
+    }
+  }
+})
+
+export default function App(): JSX.Element {
   return (
-    <div
-      className="m-0 p-0"
-      style={{
-        background: 'url(http://pets-images.dev-apis.com/pets/wallpaperA.jpg)'
-      }}
-    >
-      <header className="mb-10 w-full bg-gradient-to-b from-yellow-400 via-orange-500 to-red-500 p-7 text-center">
-        <Link
-          className="text-6xl text-white hover:text-gray-200"
-          to={'/'}
+    <QueryClientProvider client={queryClient}>
+      <AdoptedPetProvider>
+        <Suspense
+          fallback={
+            <div className="loading-pane">
+              <h2 className="loader">🐶</h2>
+            </div>
+          }
         >
-          Adopt Me!
-        </Link>
-      </header>
-      <Routes>
-        <Route
-          path="/details/:id"
-          element={<Details />}
-        />
-        <Route
-          path="/"
-          element={<SearchParams />}
-        />
-      </Routes>
-    </div>
+          <div>
+            <header>
+              <Link to={'/'}>Adopt Me!</Link>
+            </header>
+            <Routes>
+              <Route
+                path="/details/:id"
+                element={<Details />}
+              />
+              <Route
+                path="/"
+                element={<SearchParams />}
+              />
+            </Routes>
+          </div>
+        </Suspense>
+      </AdoptedPetProvider>
+    </QueryClientProvider>
   )
 }
