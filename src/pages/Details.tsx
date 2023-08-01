@@ -2,7 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { useContext, useState } from 'react'
 import { fetchPets } from '../utils/queries'
-import { IAdoptedPetContext, IPet } from '../utils/interfaces'
+import { IAdoptedPetContext } from '../utils/interfaces'
 import Carousel from '../components/Carousel'
 import ErrorBoundary from '../components/ErrorBoundary'
 import { adoptedPetContext } from '../context'
@@ -12,7 +12,10 @@ function Details(): JSX.Element {
   const [showModal, setShowModal] = useState(false)
   const navigate = useNavigate()
   const { setAdoptedPet } = useContext(adoptedPetContext) as IAdoptedPetContext
+
   const { id } = useParams()
+  if (!id) throw new Error('Missing ID')
+
   const results = useQuery(['details', id], fetchPets)
 
   if (results.isLoading) {
@@ -23,7 +26,8 @@ function Details(): JSX.Element {
     )
   }
 
-  const pet = results.data?.pets[0] as IPet
+  const pet = results.data?.pets[0]
+  if (!pet) throw new Error('Pet not found')
 
   return (
     <div className="details">

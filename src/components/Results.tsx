@@ -1,13 +1,13 @@
-import { IPet, IPetFromApi } from '../utils/interfaces'
+import { IPet } from '../utils/interfaces'
 import Pet from './Pet'
 
-export default function Results({ pets }: IPetFromApi): JSX.Element {
+export default function Results({ pets }: { pets: IPet[] | [] }): JSX.Element {
   return (
     <div className="search">
       {!pets.length ? (
         <h1>No pets found.</h1>
       ) : (
-        pets.map((p: IPet) => (
+        pets.map((p) => (
           <Pet
             key={p.id}
             name={p.name}

@@ -11,10 +11,6 @@ export interface IPet {
   state?: string
 }
 
-export interface IPetFromApi {
-  pets: IPet[]
-}
-
 export interface IPetProps extends IPet {
   location: string
 }
@@ -33,11 +29,15 @@ export interface IFormProps {
   setReqParams: (reqParams: IReqParams) => void
 }
 
-export interface IQueryKey<T> {
-  queryKey: [string, T | undefined]
-}
-
 export interface IAdoptedPetContext {
   adoptedPet: IPet | null
   setAdoptedPet: (adoptedPet: IPet | null) => void
+}
+
+export interface IPetApiResponse {
+  numberOfResults: number
+  startIndex: number
+  endIndex: number
+  hasNext: boolean
+  pets: IPet[]
 }

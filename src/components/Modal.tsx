@@ -10,7 +10,7 @@ export default function Modal({ children }: PropsWithChildren): ReactPortal {
 
   useEffect(() => {
     const modalRoot = document.getElementById('modal') as HTMLDivElement
-    modalRoot.appendChild(ref.current as HTMLDivElement)
+    if (ref.current) modalRoot.appendChild(ref.current)
 
     return () => {
       modalRoot.removeChild(ref.current as HTMLDivElement)
