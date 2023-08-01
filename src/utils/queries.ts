@@ -7,7 +7,7 @@ export async function fetchPets({
   const res = await fetch(`http://pets-v2.dev-apis.com/pets?id=${id}`)
 
   if (!res.ok) throw new Error(`Something went wrong: ${res.status}`)
-  return res.json()
+  return res.json() as Promise<IPetFromApi>
 }
 
 export async function fetchBreedList({
@@ -19,7 +19,7 @@ export async function fetchBreedList({
   const res = await fetch(`http://pets-v2.dev-apis.com/breeds?animal=${animal}`)
   if (!res.ok) throw new Error(`Something went wrong: ${res.status}`)
 
-  return res.json()
+  return res.json() as Promise<{ breeds: string[] }>
 }
 
 export async function fetchSearch({
@@ -31,5 +31,5 @@ export async function fetchSearch({
   )
 
   if (!res.ok) throw new Error(`Something went wrong: ${res.status}`)
-  return res.json()
+  return res.json() as Promise<IPetFromApi>
 }

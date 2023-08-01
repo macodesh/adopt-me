@@ -7,10 +7,14 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'prettier.config.cjs'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'prettier.config.cjs', 'vite.config.ts'],
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: './tsconfig.json'
+  },
   plugins: ['react-refresh', 'prettier'],
   rules: {
     'react-refresh/only-export-components': [
