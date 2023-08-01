@@ -6,21 +6,24 @@
   "scripts": {
     "dev": "vite",
     "build:client": "tsc && vite build --outDir ./dist/client",
-    "build:server": "tsc && vite build --outDir ./dist/server --ssr server/index.tsx",
+    "build:server": "tsc && vite build --outDir ./dist/server --ssr src/ServerApp.tsx",
     "build": "pnpm run build:client && pnpm run build:server",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "format": "prettier --write --cache --cache-strategy metadata \"/src/**/*.{ts,tsx}\"",
+    "format": "prettier --write --cache --cache-strategy metadata \"./src/**/*.{ts,tsx}\"",
     "format:lint": "pnpm run format && pnpm run lint",
-    "serve": "node dist/server/index.js"
+    "serve": "node server.js"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.32.0",
+    "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.4",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.5",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
@@ -34,11 +37,13 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "nodemon": "^3.0.1",
     "postcss": "^8.4.27",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "react-router-dom": "^6.14.2",
     "tailwindcss": "^3.3.3",
+    "ts-node": "^10.9.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }
