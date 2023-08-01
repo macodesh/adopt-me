@@ -1,7 +1,7 @@
-import { IPetProps } from '../utils/interfaces'
 import { Link } from 'react-router-dom'
+import { IPetProps } from '../utils/interfaces'
 
-export function Pet({
+export default function Pet({
   name,
   animal,
   breed,

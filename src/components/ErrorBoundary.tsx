@@ -1,7 +1,9 @@
 import { Component, ErrorInfo } from 'react'
 import { Link } from 'react-router-dom'
 
-export class ErrorBoundary extends Component<{ children: JSX.Element }> {
+export default class ErrorBoundary extends Component<{
+  children: JSX.Element
+}> {
   state = {
     hasError: false
   }

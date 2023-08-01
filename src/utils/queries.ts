@@ -12,9 +12,9 @@ export async function fetchPets({
 
 export async function fetchBreedList({
   queryKey
-}: IQueryKey<string>): Promise<string[]> {
+}: IQueryKey<string>): Promise<{ breeds: string[] }> {
   const animal = queryKey[1]
-  if (!animal) return []
+  if (!animal) return { breeds: [] }
 
   const res = await fetch(`http://pets-v2.dev-apis.com/breeds?animal=${animal}`)
   if (!res.ok) throw new Error(`Something went wrong: ${res.status}`)

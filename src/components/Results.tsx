@@ -1,7 +1,7 @@
 import { IPet, IPetFromApi } from '../utils/interfaces'
-import { Pet } from './Pet'
+import Pet from './Pet'
 
-export function Results({ pets }: IPetFromApi): JSX.Element {
+export default function Results({ pets }: IPetFromApi): JSX.Element {
   return (
     <div className="search">
       {!pets.length ? (

@@ -1,7 +1,7 @@
 import { ANIMALS } from '../utils/constants'
 import { IFormProps, IReqParams } from '../utils/interfaces'
 
-export function Form({
+export default function Form({
   animal,
   setAnimal,
   breeds,
