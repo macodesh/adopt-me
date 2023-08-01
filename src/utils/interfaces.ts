@@ -1,7 +1,9 @@
+export type Animal = 'dog' | 'cat' | 'reptile' | 'bird' | 'rabbit'
+
 export interface IPet {
   id: number
   name: string
-  animal: string
+  animal: Animal
   breed: string
   images: string[]
   description?: string
