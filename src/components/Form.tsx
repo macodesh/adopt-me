@@ -1,7 +1,7 @@
 import { ANIMALS } from '../utils/constants'
 import { IFormProps, IReqParams } from '../utils/interfaces'
 
-export function Form({
+export default function Form({
   animal,
   setAnimal,
   breeds,
@@ -24,14 +24,14 @@ export function Form({
         setReqParams(updatedData as IReqParams)
       }}
     >
-      {adoptedPet && (
+      {adoptedPet ? (
         <div className="pet image-container">
           <img
             src={adoptedPet.images[0]}
             alt={adoptedPet.name}
           />
         </div>
-      )}
+      ) : null}
       <label htmlFor="location">
         Location
         <input
@@ -39,7 +39,6 @@ export function Form({
           id="location"
           placeholder="Seattle, WA"
           name="location"
-          className="mb-5 block w-60"
         />
       </label>
       <label htmlFor="animal">
@@ -48,7 +47,6 @@ export function Form({
           id="animal"
           value={animal}
           onChange={(e) => setAnimal(e.target.value)}
-          className="mb-5 block w-60"
         >
           <option value=""></option>
           {ANIMALS.map((s) => (
@@ -67,7 +65,6 @@ export function Form({
           id="breed"
           name="breed"
           disabled={breeds.length === 0}
-          className="mb-5 block w-60 disabled:opacity-50"
         >
           <option value=""></option>
           {breeds.map((b) => (
@@ -80,12 +77,7 @@ export function Form({
           ))}
         </select>
       </label>
-      <button
-        type="submit"
-        className="color rounded border-none bg-orange-500 px-6 py-2 text-white transition hover:opacity-50"
-      >
-        Submit
-      </button>
+      <button type="submit">Submit</button>
     </form>
   )
 }

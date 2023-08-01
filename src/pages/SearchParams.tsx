@@ -1,8 +1,8 @@
-import { useState, useContext } from 'react'
-import { useBreedList } from '../utils/useBreedList'
-import { Results } from '../components/Results'
-import { Form } from '../components/Form'
+import { useContext, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
+import { useBreedList } from '../utils/useBreedList'
+import Results from '../components/Results'
+import Form from '../components/Form'
 import { fetchSearch } from '../utils/queries'
 import { adoptedPetContext } from '../context'
 import { IAdoptedPetContext } from '../utils/interfaces'
@@ -20,7 +20,7 @@ export default function SearchParams(): JSX.Element {
   const pets = results.data?.pets ?? []
 
   return (
-    <div className="mx-auto my-0 w-11/12">
+    <div className="search-params">
       <Form
         animal={animal}
         setAnimal={setAnimal}

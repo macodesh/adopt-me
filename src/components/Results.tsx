@@ -1,9 +1,9 @@
 import { IPet, IPetFromApi } from '../utils/interfaces'
-import { Pet } from './Pet'
+import Pet from './Pet'
 
-export function Results({ pets }: IPetFromApi): JSX.Element {
+export default function Results({ pets }: IPetFromApi): JSX.Element {
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="search">
       {!pets.length ? (
         <h1>No pets found.</h1>
       ) : (

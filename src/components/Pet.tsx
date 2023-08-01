@@ -1,7 +1,7 @@
-import { IPetProps } from '../utils/interfaces'
 import { Link } from 'react-router-dom'
+import { IPetProps } from '../utils/interfaces'
 
-export function Pet({
+export default function Pet({
   name,
   animal,
   breed,
@@ -16,7 +16,7 @@ export function Pet({
   return (
     <Link
       to={`/details/${id}`}
-      className="relative block"
+      className="pet"
     >
       <div className="image-container">
         <img
@@ -24,7 +24,7 @@ export function Pet({
           alt={name}
         />
       </div>
-      <div className="bg-gradient-tr absolute bottom-0 left-0 from-white to-transparent pr-2 pt-2">
+      <div className="info">
         <h1>{name}</h1>
         <h2>
           {animal} - {breed} - {location}

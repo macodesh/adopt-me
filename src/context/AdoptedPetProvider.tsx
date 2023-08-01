@@ -1,8 +1,8 @@
-import { adoptedPetContext } from '.'
 import { useState } from 'react'
 import { IAdoptedPetContext, IPet } from '../utils/interfaces'
+import { adoptedPetContext } from '.'
 
-export function AdoptedPetProvider({
+export default function AdoptedPetProvider({
   children
 }: {
   children: React.ReactNode
