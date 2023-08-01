@@ -13,14 +13,14 @@ export default function Form({
       onSubmit={(e) => {
         e.preventDefault()
 
-        const formData = new FormData(e.target as HTMLFormElement)
-        const updatedData = {
-          animal: formData.get('animal') ?? '',
-          breed: formData.get('breed') ?? '',
-          location: formData.get('location') ?? ''
+        const formData = new FormData(e.currentTarget)
+        const updatedData: IReqParams = {
+          animal: formData.get('animal')?.toString() ?? '',
+          breed: formData.get('breed')?.toString() ?? '',
+          location: formData.get('location')?.toString() ?? ''
         }
 
-        setReqParams(updatedData as IReqParams)
+        setReqParams(updatedData)
       }}
     >
       {adoptedPet ? (
