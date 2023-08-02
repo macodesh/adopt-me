@@ -24,11 +24,13 @@ export default class Carousel extends Component<{ images: string[] }> {
         <img
           src={images[active]}
           alt="animal hero"
+          data-testid="hero"
         />
         <div className="carousel-smaller">
           {images.map((image, i: number) => (
             <img
               key={image}
+              data-testid={`thumbnail-${i}`}
               data-index={i}
               onClick={this.handleIndexClick}
               src={image}

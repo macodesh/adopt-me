@@ -5,7 +5,7 @@ export default function Pet({
   name,
   animal,
   breed,
-  images,
+  images = [],
   location,
   id
 }: IPetProps): JSX.Element {
@@ -22,6 +22,7 @@ export default function Pet({
         <img
           src={hero}
           alt={name}
+          data-testid="thumbnail"
         />
       </div>
       <div className="info">

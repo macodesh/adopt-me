@@ -5,7 +5,7 @@ import Results from '../components/Results'
 import Form from '../components/Form'
 import { fetchSearch } from '../utils/queries'
 import { adoptedPetContext } from '../context'
-import { IAdoptedPetContext } from '../utils/interfaces'
+import { Animal, IAdoptedPetContext } from '../utils/interfaces'
 
 export default function SearchParams(): JSX.Element {
   const [reqParams, setReqParams] = useState({
@@ -14,7 +14,7 @@ export default function SearchParams(): JSX.Element {
     breed: ''
   })
   const [animal, setAnimal] = useState('')
-  const [breeds] = useBreedList(animal)
+  const [breeds] = useBreedList(animal as Animal)
   const { adoptedPet } = useContext(adoptedPetContext) as IAdoptedPetContext
   const results = useQuery(['search', reqParams], fetchSearch)
   const pets = results.data?.pets ?? []
