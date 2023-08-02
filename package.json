@@ -11,8 +11,10 @@
     "format": "prettier --write --cache --cache-strategy metadata \"src/**/*.{ts,tsx}\"",
     "format:lint": "pnpm run format && pnpm run lint",
     "format:check": "prettier --check --cache --cache-strategy metadata \"src/**/*.{ts,tsx}\"",
-    "test": "vitest",
-    "test:coverage": "vitest --coverage"
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage",
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.32.0",
