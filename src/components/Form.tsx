@@ -53,12 +53,12 @@ export default function Form({
         >
           <option value=""></option>
           {/* Renderiza opções de tipos de animais. */}
-          {ANIMALS.map((s) => (
+          {ANIMALS.map((a) => (
             <option
-              key={s}
-              value={s}
+              key={a}
+              value={a}
             >
-              {s}
+              {a}
             </option>
           ))}
         </select>
