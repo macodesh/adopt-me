@@ -5,7 +5,9 @@ import createFetchMock from 'vitest-fetch-mock'
 import { useBreedList } from '../utils/useBreedList'
 import { Animal } from '../utils/interfaces'
 
+// Testes para o hook useBreedList.
 describe.skip('useBreedList hook', () => {
+  // Configuração do QueryClient.
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -16,6 +18,7 @@ describe.skip('useBreedList hook', () => {
     }
   })
 
+  // Lista de raças de cachorros.
   const breeds = {
     dogs: [
       'Havanese',
@@ -28,14 +31,18 @@ describe.skip('useBreedList hook', () => {
     ]
   }
 
+  // Configuração do fetchMock.
   const fetchMock = createFetchMock(vi)
   fetchMock.enableMocks()
 
+  // Função executada após cada teste para redefinir o mock de fetch.
   afterEach(() => {
     fetchMock.resetMocks()
   })
 
+  // Teste para verificar retorno de lista vazia sem fornecer um animal.
   it('should return empty list with no animal provided', () => {
+    // Renderiza o hook useBreedList com animal vazio.
     const { result } = renderHook(() => useBreedList('' as Animal), {
       wrapper: ({ children }) => (
         <QueryClientProvider client={queryClient}>
@@ -43,13 +50,18 @@ describe.skip('useBreedList hook', () => {
         </QueryClientProvider>
       )
     })
+
+    // Obtém os valores retornados pelo hook.
     const [breedList, status] = result.current
 
+    // Verifica se a lista de raças está vazia e o status é 'loading'.
     expect(breedList).toHaveLength(0)
     expect(status).toBe('loading')
   })
 
+  // Teste para verificar retorno de lista com animal fornecido.
   it('should return list with animal provided', async () => {
+    // Configura a resposta mockada do fetch.
     fetchMock.mockResponseOnce(
       JSON.stringify({
         breeds: breeds.dogs,
@@ -57,6 +69,7 @@ describe.skip('useBreedList hook', () => {
       })
     )
 
+    // Renderiza o hook useBreedList com animal 'dog'.
     const { result } = renderHook(() => useBreedList('dog'), {
       wrapper: ({ children }) => (
         <QueryClientProvider client={queryClient}>
@@ -65,11 +78,15 @@ describe.skip('useBreedList hook', () => {
       )
     })
 
+    // Aguarda até que o status seja 'success' (dados carregados).
     await waitFor(() => {
       expect(result.current[1]).toBe('success')
     })
 
+    // Obtém a lista de raças retornada pelo hook.
     const [breedList] = result.current
+
+    // Verifica se a lista de raças é igual à lista mockada.
     expect(breedList).toEqual(breeds.dogs)
   })
 })

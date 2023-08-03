@@ -1,6 +1,7 @@
 import { QueryFunction } from '@tanstack/react-query'
 import { IPetApiResponse, IReqParams } from './interfaces'
 
+// Função para buscar detalhes de um pet com base no ID.
 export const fetchPets: QueryFunction<
   IPetApiResponse,
   ['details', string]
@@ -12,6 +13,7 @@ export const fetchPets: QueryFunction<
   return res.json()
 }
 
+// Função para buscar lista de raças de animais.
 export const fetchBreedList: QueryFunction<
   { breeds: string[] },
   ['breeds', string]
@@ -25,6 +27,7 @@ export const fetchBreedList: QueryFunction<
   return res.json()
 }
 
+// Função para buscar animais disponíveis para adoção com base nos parâmetros de pesquisa.
 export const fetchSearch: QueryFunction<
   IPetApiResponse,
   ['search', IReqParams]

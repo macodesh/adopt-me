@@ -5,7 +5,7 @@ export interface IPet {
   name: string
   animal: Animal
   breed: string
-  images?: string[]
+  images: string[]
   description?: string
   city?: string
   state?: string
