@@ -1,7 +1,6 @@
 import { ANIMALS } from '../utils/constants'
 import { IFormProps, IReqParams } from '../utils/interfaces'
 
-// Componente de formulário para pesquisa de animais para adoção.
 export default function Form({
   animal,
   setAnimal,
@@ -14,7 +13,6 @@ export default function Form({
       onSubmit={(e) => {
         e.preventDefault()
 
-        // Coleta os dados do formulário.
         const formData = new FormData(e.currentTarget)
         const updatedData: IReqParams = {
           animal: formData.get('animal')?.toString() ?? '',
@@ -22,11 +20,9 @@ export default function Form({
           location: formData.get('location')?.toString() ?? ''
         }
 
-        // Atualiza os parâmetros de pesquisa.
         setReqParams(updatedData)
       }}
     >
-      {/* Exibe a imagem do pet adotado, se disponível. */}
       {adoptedPet ? (
         <div className="pet image-container">
           <img
@@ -52,7 +48,6 @@ export default function Form({
           onChange={(e) => setAnimal(e.target.value)}
         >
           <option value=""></option>
-          {/* Renderiza opções de tipos de animais. */}
           {ANIMALS.map((a) => (
             <option
               key={a}
@@ -65,14 +60,12 @@ export default function Form({
       </label>
       <label htmlFor="breed">
         Breed
-        {/* Seleção de raça, desabilitada se não houver raças disponíveis. */}
         <select
           id="breed"
           name="breed"
           disabled={breeds.length === 0}
         >
           <option value=""></option>
-          {/* Renderiza opções de raças. */}
           {breeds.map((b) => (
             <option
               key={b}
