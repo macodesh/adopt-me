@@ -1,5 +1,5 @@
 import { IPet } from '../utils/interfaces'
-import Pet from './Pet'
+import Pet from './pet'
 
 export default function Results({ pets }: { pets: IPet[] | [] }): JSX.Element {
   return (

@@ -3,10 +3,10 @@ import { useQuery } from '@tanstack/react-query'
 import { useContext, useState } from 'react'
 import { fetchPets } from '../utils/queries'
 import { IAdoptedPetContext } from '../utils/interfaces'
-import Carousel from '../components/Carousel'
-import ErrorBoundary from '../components/ErrorBoundary'
+import Carousel from '../components/carousel'
+import ErrorBoundary from '../components/errorBoundary'
 import { adoptedPetContext } from '../context'
-import Modal from '../components/Modal'
+import Modal from '../components/modal'
 
 function Details(): JSX.Element {
   const [showModal, setShowModal] = useState(false)
