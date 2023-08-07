@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import Carousel from '../components/carousel'
+import Carousel from '.'
 
 describe('Carousel component', () => {
   it('changes hero image when thumbnail is clicked', async () => {

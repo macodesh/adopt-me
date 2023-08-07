@@ -2,10 +2,10 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { renderHook, waitFor } from '@testing-library/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import createFetchMock from 'vitest-fetch-mock'
-import { useBreedList } from '../utils/useBreedList'
+import { useBreedList } from './useBreedList'
 import { Animal } from '../utils/interfaces'
 
-describe.skip('useBreedList hook', () => {
+describe('useBreedList hook', () => {
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {

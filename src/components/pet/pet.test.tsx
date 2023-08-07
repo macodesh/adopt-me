@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { render } from '@testing-library/react'
 import { StaticRouter } from 'react-router-dom/server'
-import Pet from '../components/pet'
+import Pet from '.'
 
 describe('Pet component', () => {
   it('display a default thumbnail', async () => {

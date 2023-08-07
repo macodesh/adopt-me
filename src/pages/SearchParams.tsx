@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { useBreedList } from '../utils/useBreedList'
+import { useBreedList } from '../hooks/useBreedList'
 import Results from '../components/results'
 import Form from '../components/form'
 import { fetchSearch } from '../utils/queries'

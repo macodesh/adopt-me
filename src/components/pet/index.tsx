@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { IPetProps } from '../utils/interfaces'
+import { IPetProps } from '../../utils/interfaces'
 
 export default function Pet({
   name,
