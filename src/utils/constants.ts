@@ -1,3 +1,3 @@
-import { Animal } from './interfaces'
+import { AnimalType } from './interfaces'
 
-export const ANIMALS: Animal[] = ['cat', 'dog', 'bird', 'reptile', 'rabbit']
+export const Animals: AnimalType[] = ['cat', 'dog', 'bird', 'reptile', 'rabbit']

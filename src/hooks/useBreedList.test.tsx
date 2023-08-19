@@ -3,7 +3,7 @@ import { renderHook, waitFor } from '@testing-library/react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import createFetchMock from 'vitest-fetch-mock'
 import { useBreedList } from './useBreedList'
-import { Animal } from '../utils/interfaces'
+import { AnimalType } from '../utils/interfaces'
 
 describe('useBreedList hook', () => {
   const queryClient = new QueryClient({
@@ -36,7 +36,7 @@ describe('useBreedList hook', () => {
   })
 
   it('should return empty list with no animal provided', () => {
-    const { result } = renderHook(() => useBreedList('' as Animal), {
+    const { result } = renderHook(() => useBreedList('' as AnimalType), {
       wrapper: ({ children }) => (
         <QueryClientProvider client={queryClient}>
           {children}

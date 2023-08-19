@@ -1,4 +1,4 @@
-import { ANIMALS } from '../utils/constants'
+import { Animals } from '../utils/constants'
 import { IFormProps, IReqParams } from '../utils/interfaces'
 
 export default function Form({
@@ -48,7 +48,7 @@ export default function Form({
           onChange={(e) => setAnimal(e.target.value)}
         >
           <option value=""></option>
-          {ANIMALS.map((a) => (
+          {Animals.map((a) => (
             <option
               key={a}
               value={a}
