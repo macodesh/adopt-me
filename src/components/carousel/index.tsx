@@ -1,18 +1,15 @@
 import { Component, MouseEvent } from 'react'
 
 export default class Carousel extends Component<{ images: string[] }> {
-  state = {
-    active: 0
-  }
+  state = { active: 0 }
 
   static defaultProps = {
     images: ['http://pets-images.dev-api.com/pets/none.jpg']
   }
 
   handleIndexClick = (e: MouseEvent<HTMLDivElement>): void => {
-    if (e.currentTarget.dataset.index) {
+    if (e.currentTarget.dataset.index)
       this.setState({ active: +e.currentTarget.dataset.index })
-    }
   }
 
   render(): JSX.Element {

@@ -4,9 +4,7 @@ import { createPortal } from 'react-dom'
 export default function Modal({ children }: PropsWithChildren): ReactPortal {
   const ref = useRef<HTMLDivElement | null>(null)
 
-  if (!ref.current) {
-    ref.current = document.createElement('div')
-  }
+  if (!ref.current) ref.current = document.createElement('div')
 
   useEffect(() => {
     const modalRoot = document.getElementById('modal') as HTMLDivElement

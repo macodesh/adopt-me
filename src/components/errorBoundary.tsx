@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom'
 export default class ErrorBoundary extends Component<{
   children: JSX.Element
 }> {
-  state = {
-    hasError: false
-  }
+  state = { hasError: false }
 
   static getDerivedStateFromError(): { hasError: boolean } {
     return { hasError: true }
@@ -24,8 +22,6 @@ export default class ErrorBoundary extends Component<{
           <Link to="/">Go back to home.</Link>
         </>
       )
-    } else {
-      return this.props.children
-    }
+    } else return this.props.children
   }
 }
