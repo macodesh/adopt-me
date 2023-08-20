@@ -4,9 +4,9 @@ import { useContext, useState } from 'react'
 import { fetchPets } from '../utils/queries'
 import { IAdoptedPetContext } from '../utils/interfaces'
 import Carousel from '../components/carousel'
-import ErrorBoundary from '../components/errorBoundary'
+import ErrorBoundary from '../components/ErrorBoundary'
 import { adoptedPetContext } from '../context'
-import Modal from '../components/modal'
+import Modal from '../components/Modal'
 
 function Details(): JSX.Element {
   const [showModal, setShowModal] = useState(false)

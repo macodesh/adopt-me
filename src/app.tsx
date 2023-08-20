@@ -1,8 +1,8 @@
 import { Link, Route, Routes } from 'react-router-dom'
 import { lazy } from 'react'
-import SearchParams from './pages/searchParams'
+import SearchParams from './pages/SearchParams'
 
-const Details = lazy(() => import('./pages/details'))
+const Details = lazy(() => import('./pages/Details'))
 
 export default function App(): JSX.Element {
   return (
