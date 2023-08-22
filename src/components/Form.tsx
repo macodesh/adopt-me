@@ -48,12 +48,12 @@ export default function Form({
           onChange={(e) => setAnimal(e.target.value)}
         >
           <option value=""></option>
-          {ANIMALS.map((a) => (
+          {ANIMALS.map((animal) => (
             <option
-              key={a}
-              value={a}
+              key={animal}
+              value={animal}
             >
-              {a}
+              {animal}
             </option>
           ))}
         </select>
@@ -66,12 +66,12 @@ export default function Form({
           disabled={breeds.length === 0}
         >
           <option value=""></option>
-          {breeds.map((b) => (
+          {breeds.map((breed) => (
             <option
-              key={b}
-              value={b}
+              key={breed}
+              value={breed}
             >
-              {b}
+              {breed}
             </option>
           ))}
         </select>
